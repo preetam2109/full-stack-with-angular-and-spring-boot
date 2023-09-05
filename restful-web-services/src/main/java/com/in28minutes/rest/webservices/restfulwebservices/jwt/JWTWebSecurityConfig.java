@@ -80,13 +80,13 @@ public class JWTWebSecurityConfig {
 				.authorities("read")
 				.roles("USER")
 				.build();
-			UserDetails admin = User.withUsername("Ranga")
+		UserDetails admin = User.withUsername("Ranga")
 				.password("{noop}dummy")
 				.authorities("read")
 				.roles("ADMIN","USER")
 				.build();	
 
-		return new InMemoryUserDetailsManager(user);
+		return new InMemoryUserDetailsManager(user,admin);
 	}
 
 	@Bean
